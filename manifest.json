@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "auto-youglish",
+  "version": "0.1.0",
+  "description": "Skip YouGlish's pronunciation videos automatically",
+  "page_action": {
+    "default_popup": "html/popup.html"
+  },
+  "background": {
+    "scripts": ["js/background.js"],
+    "persistent": true
+  },
+  "content_scripts": [{
+    "matches": ["https://youglish.com/*"],
+    "js": ["js/skip-periodically.js"]
+  }],
+  "permissions": [
+    "storage"
+  ]
+}
